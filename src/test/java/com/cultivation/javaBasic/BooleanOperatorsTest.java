@@ -1,9 +1,9 @@
 package com.cultivation.javaBasic;
 
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
 
 class BooleanOperatorsTest {
     @SuppressWarnings({"PointlessBooleanExpression", "ConstantConditions"})
@@ -28,7 +28,22 @@ class BooleanOperatorsTest {
 
         // TODO: please modify the following code to pass the test
         // <--start
-        boolean[] expectedResult = {};
+        boolean[] expectedResult = {
+            true,
+            false,
+            false,
+            true,
+            true,
+            false,
+            true,
+            false,
+            false,
+            true,
+            true,
+            false,
+            false,
+            true
+        };
         // --end-->
 
         assertArrayEquals(expectedResult, actualResults);
@@ -41,7 +56,9 @@ class BooleanOperatorsTest {
 
         // TODO: please write down the result directly to pass the test.
         // <--start
-        final int expected = 0;
+        String valueIn2 = Integer.toBinaryString(value);
+        String maskIn2 = Integer.toBinaryString(mask);
+        final int expected = Integer.valueOf("1001010101100000000", 2);
         // --end-->
 
         assertEquals(expected, value & mask);
@@ -54,7 +71,9 @@ class BooleanOperatorsTest {
 
         // TODO: please write down the result directly to pass the test.
         // <--start
-        final int expected = 0;
+        String valueIn2 = Integer.toBinaryString(value);
+        String maskIn2 = Integer.toBinaryString(mask);
+        final int expected = Integer.valueOf("10010001101001010101111001101", 2);
         // --end-->
 
         assertEquals(expected, value | mask);
@@ -66,7 +85,8 @@ class BooleanOperatorsTest {
 
         // TODO: please write down the result directly to pass the test.
         // <--start
-        final int expected = 0;
+        String valueIn2 = Integer.toBinaryString(value);
+        final int expected = -65536;
         // --end-->
 
         assertEquals(expected, ~value);
